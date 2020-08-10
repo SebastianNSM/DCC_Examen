@@ -9,15 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-/**
- * Pelicula
- */
 @Entity
-@Data
-@EqualsAndHashCode
 @Table(name = "T_PELICULA")
 public class Pelicula {
 
@@ -40,5 +32,72 @@ public class Pelicula {
 
     @Column(name = "release_date", nullable = false)
     private LocalDate releaseDate;
+
+    public Pelicula() {
+
+    }
+
+    public Pelicula(int id, String title, int budget, float runtime, String lang, LocalDate releaseDate) {
+        this.id = id;
+        this.title = title;
+        this.budget = budget;
+        this.runtime = runtime;
+        this.lang = lang;
+        this.releaseDate = releaseDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
+    }
+
+    public float getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(float runtime) {
+        this.runtime = runtime;
+    }
+
+    public String getLang() {
+        return lang;
+    }
+
+    public void setLang(String lang) {
+        this.lang = lang;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Pelicula [budget=" + budget + ", id=" + id + ", lang=" + lang + ", releaseDate=" + releaseDate
+                + ", runtime=" + runtime + ", title=" + title + "]";
+    }
 
 }
