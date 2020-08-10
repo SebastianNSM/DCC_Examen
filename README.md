@@ -1,7 +1,7 @@
 # Examen 3 Sebastián Soto
 
-- [ ] REST
-  - [ ] Crud
+- [x] REST
+  - [x] Crud
   - [x] Películas por nombre
   - [x] Rango presupuestos
   - [x] Rango duración
