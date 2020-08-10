@@ -74,4 +74,8 @@ public class PeliculaService {
         return lst.stream().filter(p -> p.getReleaseDate().getYear() == year).collect(Collectors.toList());
     }
 
+    public List<Pelicula> getAllFromDate(LocalDate date) {
+        return peliculaRepository.findByReleaseDate(date);
+    }
+
 }

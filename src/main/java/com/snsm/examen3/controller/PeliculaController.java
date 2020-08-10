@@ -1,5 +1,6 @@
 package com.snsm.examen3.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.snsm.examen3.model.Pelicula;
@@ -36,19 +37,20 @@ public class PeliculaController {
         return peliculaService.getByTimeRange(min, max);
     }
 
-    @GetMapping("date/{month}/{day}")
-    public List<Pelicula> getAllFromDayOfMonth(@PathVariable("month") int month, @PathVariable("day") int day) {
-        return peliculaService.getAllFromDayOfMonth(month, day);
-    }
-
     @GetMapping("year/{year}")
     public List<Pelicula> getAllFromYear(@PathVariable("year") int year) {
         return peliculaService.getAllFromYear(year);
     }
 
-    @GetMapping("noe")
-    public List<Pelicula> getAllByBudget() {
-        return peliculaService.getAll();
+    @GetMapping("date/{month}/{day}")
+    public List<Pelicula> getAllFromDayOfMonth(@PathVariable("month") int month, @PathVariable("day") int day) {
+        return peliculaService.getAllFromDayOfMonth(month, day);
+    }
+
+    @GetMapping("date/{year}/{month}/{day}/")
+    public List<Pelicula> getAllFromDate(@PathVariable("month") int month, @PathVariable("day") int day,
+            @PathVariable("year") int year) {
+        return peliculaService.getAllFromDate(LocalDate.of(year, month, day));
     }
 
     @GetMapping("budget/{min}/{max}")
