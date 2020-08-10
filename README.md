@@ -6,7 +6,7 @@
   - [x] Rango presupuestos
   - [x] Rango duración
   - [x] por día y mes
-  - [ ] por fecha
+  - [x] por fecha
   - [x] por año
 - [ ] GraphQL
   - [ ] Curd
