@@ -9,6 +9,8 @@ import com.snsm.examen3.service.PeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -56,5 +58,11 @@ public class PeliculaController {
     @GetMapping("budget/{min}/{max}")
     public List<Pelicula> getAllByBudget(@PathVariable("min") int min, @PathVariable("max") int max) {
         return peliculaService.getByBudgetRange(min, max);
+    }
+
+    @PostMapping
+    public Pelicula createPelicula(@RequestBody Pelicula pelicula) {
+        return peliculaService.createPelicula(pelicula.getTitle(), pelicula.getBudget(), pelicula.getRuntime(),
+                pelicula.getLang(), pelicula.getReleaseDate().toString());
     }
 }

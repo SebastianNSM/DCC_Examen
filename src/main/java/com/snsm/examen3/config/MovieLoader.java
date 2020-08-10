@@ -19,6 +19,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
+import com.snsm.examen3.model.Pelicula;
+
 @Component
 class MovieLoader implements CommandLineRunner {
 
